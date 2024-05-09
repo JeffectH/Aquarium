@@ -149,7 +149,7 @@ namespace Aquarium
         {
             foreach (Fish fish in _fish)
             {
-                fish.GrowOld();
+                fish.ReducingLives();
             }
         }
 
@@ -184,7 +184,7 @@ namespace Aquarium
         public bool IsCondition => LifeExpectancy > 0 ? true : false;
         public string Condition => IsCondition ? "Жива" : "Мертва";
 
-        public void GrowOld()
+        public void ReducingLives()
         {
             if (LifeExpectancy > 0)
             {
