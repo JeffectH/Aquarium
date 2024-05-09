@@ -1,10 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlTypes;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Markup;
 
 namespace Aquarium
 {
@@ -25,7 +20,6 @@ namespace Aquarium
             aquarium.Work();
         }
     }
-
 
     class Aquarium
     {
@@ -69,7 +63,7 @@ namespace Aquarium
                             break;
 
                         case CommandNextIteration:
-                            NextIteration();
+                            PerformNextIteration();
                             break;
 
                         default:
@@ -89,7 +83,7 @@ namespace Aquarium
             Console.WriteLine("Рыбок в аквариуме больше нет!");
         }
 
-        public void AddFish()
+        private void AddFish()
         {
             string type;
             bool isWork = true;
@@ -151,7 +145,7 @@ namespace Aquarium
             }
         }
 
-        private void NextIteration()
+        private void PerformNextIteration()
         {
             foreach (Fish fish in _fish)
             {
